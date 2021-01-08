@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Samples List</title>
+
+  </head>
+  <body>
+    <h1>Here are your samples:</h1>
+
+    {% if samplelist %}
+
+    <ol>
+      {% for Sample in samplelist %}
+        <li id="list">Sample Info </li>
+        <ul>
+          <li>Track Name: {{Sample.sample_name}}</li>
+            <li>cover_art: {{Sample.cover_art}}</li>
+              <img src="{% static "tokyoloop/images/5.jpg" %}" alt="">
+        </ul>
+      {% endfor %}
+    </ol>
+
+    {% endif %}
+
+
+    {% if imagelist %}
+
+    <ol>
+      {% for ClubImage in imagelist %}
+        <li>image Info </li>
+        <ul>
+          <li>Badge: {{ClubImage.image}}</li>
+        </ul>
+      {% endfor %}
+    </ol>
+
+    {% endif %}
+
+
+  </body>
+</html>
